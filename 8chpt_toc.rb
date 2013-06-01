@@ -1,6 +1,6 @@
 line_width = 30
 
-toc = ['Table of Contents', ['Chapter 1: ', 'Chapter 2: ', 'Chapter 3: '], ['Getting Started', 'Numbers', 'Letters'], ['page  1', 'page  9', 'page 13']]
+toc = ['Table of Contents'], ['Chapter 1: ', 'Chapter 2: ', 'Chapter 3: '], ['Getting Started', 'Numbers', 'Letters'], ['page  1', 'page  9', 'page 13']]
 
 puts toc[0].center(line_width*2)
 
