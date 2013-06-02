@@ -33,9 +33,10 @@ class RomanNumerals
       number = number % 50
     x_times = "X" * (number / 10)
     
+    #modified to correct the number 4
     if (number % 10) == 4
-      v_times = "I" * (number % 5)
-      i_times = "V"
+      v_times = "IV"
+      i_times = ""
     else number = number % 10
       v_times = "V" * (number / 5)
       i_times = "I" * (number % 5)
@@ -47,6 +48,6 @@ end
 
 test = RomanNumerals.new
 puts test.old_roman_numeral(1677)
-puts test.modern_roman_numeral(44)
-puts test.modern_roman_numeral(45)
-puts test.modern_roman_numeral(43)
+puts test.modern_roman_numeral(54)
+puts test.modern_roman_numeral(58)
+puts test.modern_roman_numeral(53)
