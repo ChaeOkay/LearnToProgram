@@ -17,9 +17,22 @@ def english_number(number)
   teenagers = ['eleven','twelve','thirteen',
               'fourteen','fifteen','sixteen',
               'seventeen','eighteen','nineteen']
-              
-  write = number/1_000
-  left = number - write*1_000
+      
+      
+  write = number/1_000_000
+  left = number - write*1_000_000
+  
+  if write > 0
+    millions = english_number(write)
+    num_string = num_string + millions + ' million'
+    
+    if left > 0
+      num_string = num_string + " "
+    end
+  end
+                          
+  write = left/1_000
+  left = left - write*1_000
   
   if write > 0
     thousands = english_number(write)
@@ -77,3 +90,4 @@ puts english_number(324)
 puts english_number(1_000)
 puts english_number(3_211)
 puts english_number(99_999)
+puts english_number(1_800_200)
