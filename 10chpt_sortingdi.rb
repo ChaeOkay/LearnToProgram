@@ -8,7 +8,7 @@ def recursive_sort unsorted_array, sorted_array
   until unsorted_array.size == 0
   
     unsorted_array.each do |word|
-      base = word if word.size <= base.size   
+      base = word if word.downcase.size <= base.downcase.size   
     end
     sorted_array << base
     unsorted_array.delete(base)
@@ -17,4 +17,4 @@ def recursive_sort unsorted_array, sorted_array
   sorted_array
 end
 
-puts recursive_sort ["apple", "a", "cat", "at"], []
+puts recursive_sort ["Apple", "a", "Bean", "bat", "cat", "at"], []

@@ -1,6 +1,6 @@
+=begin
+FIRST TRY
 class RomanNumerals
-  attr_accessor :m_times, :d_times, :c_times, :l_times, :x_times, :v_times, :i_times
-  
   def old_roman_numeral(number)
     number.to_i
     
@@ -45,9 +45,36 @@ class RomanNumerals
     m_times + d_times + c_times + l_times + x_times + v_times + i_times 
   end
 end
+=end
+class RomanNumerals
+  def old_roman_numeral(number)
+    number.to_i
+    
+    rn_string = "M" * (number / 1000)
+      number %= 1000
+      
+    rn_string += "D" * (number / 500)
+      number %= 500
+      
+    rn_string += "C" * (number / 100)  
+      number %= 100
+      
+    rn_string += "L" * (number / 50)  
+        number %= 50
+    
+    rn_string += "X" * (number / 10)  
+          number %= 10
+          
+    rn_string += "V" * (number / 5)  
+    
+    rn_string += "I" * (number % 5)  
+  
+    puts rn_string 
+  end
+  
+  def modern_roman_numeral(number)
+  end
+end
 
 test = RomanNumerals.new
 puts test.old_roman_numeral(1677)
-puts test.modern_roman_numeral(54)
-puts test.modern_roman_numeral(58)
-puts test.modern_roman_numeral(53)
