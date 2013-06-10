@@ -16,4 +16,4 @@ def recursive_shuffle array, shuffled_array
   shuffled_array
 end
 
-puts recursive_shuffle ["apple", "a", "cat", "at"], []
+#puts recursive_shuffle ["apple", "a", "cat", "at"], []
