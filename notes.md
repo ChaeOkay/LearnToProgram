@@ -54,3 +54,18 @@ to_s
 
 ####Dir
 each
+
+####YAML
+.to_yaml
+YAML::load(yaml_string)
+####File
+File.exist?
+File.open (filename, 'w/w+/r/r+') {|filename| file.write(something)}
+File.read(filename)
+File.rename(original, new)
+####Dir
+Dir.chdir
+Dir['*.txt'] => array
+####Time
+spans about Dec 1901 to Jan 2038 - Date and DateTime more cumbersome to use
+Time.local
