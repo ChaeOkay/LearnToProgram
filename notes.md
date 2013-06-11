@@ -20,6 +20,11 @@ capitalize - first character - not first letter
 center(line_width - in numbers)
 ljust - left justify
 rjust(line_width - numbers)
+?T  - and opposite - 84.chr
+var = 'string' 
+var[0] == 'string'
+var[index to start, num of characters]
+
 ####Fixnum
 +
 _
@@ -68,4 +73,10 @@ Dir.chdir
 Dir['*.txt'] => array
 ####Time
 spans about Dec 1901 to Jan 2038 - Date and DateTime more cumbersome to use
-Time.local
+Time.now
+Time.local(year, month, date)
+Time.month
+####Range
+cover?(item) / include? / member?
+each
+step(interval)
