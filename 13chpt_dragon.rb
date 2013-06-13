@@ -1,37 +1,32 @@
-class Dragon 
-  def initialize name 
-    @name=name 
-    @asleep=false 
-    @stuff_in_belly =10
-    @stuff_in_intestine=0
-    puts"#{@name}isborn." 
-  end 
+class Dragon
+  def initialize
+  end
   
-  def feed(name_of_food)
-    puts "Youfeed #{@name} #{name_of_food}." 
-    case name_of_food
-    when 'bug'
-      @stuff_in_belly=5 
-    when 'apple'
-      @stuff_in_belly=10
+  def dispatch(method_call)
+    return p "String needed!" unless method_call.is_a?(String)
+    
+    if ['feed', 'walk'].include?(method_call)
+      p self.send(method_call)
     else
-      puts "#{@name} needs bugs or apples"
+      p "#{method_call} is not a command"
     end
-    passage_of_time 
-  end 
-  
-  def walk(distance)
-    puts "You walk#{@name}." 
-    @stuff_in_intestine=0    
-    passage_of_time 
   end
   
   private
   
-  def passage_of_time
-    if @stuff_in_belly > 0   
-      @stuff_in_belly -= 1
-      @stuff_in_intestine += 1
-    end
+  def feed
+    "I was fed"
   end
+  
+  def walk
+    "I was walked"
+  end
+  
 end
+
+
+dew = Dragon.new
+p dew.dispatch(1) == "String needed!"
+p dew.dispatch('eat') == "eat is not a command"
+p dew.dispatch('feed') == "I was fed"
+p dew.dispatch('walk') == "I was walked"
